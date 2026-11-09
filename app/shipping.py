@@ -7,6 +7,6 @@ STANDARD_SHIPPING = 599
 def shipping_cost(subtotal_cents: int) -> int:
     if subtotal_cents < 0:
         raise ValueError("Subtotal cannot be negative")
-    if subtotal_cents > FREE_SHIPPING_THRESHOLD:
+    if subtotal_cents >= FREE_SHIPPING_THRESHOLD:
         return 0
     return STANDARD_SHIPPING
